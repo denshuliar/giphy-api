@@ -23,7 +23,6 @@
 <script>
 import Search from "./components/Search.vue";
 import Preview from "./components/Preview.vue";
-const Vue = require("vue/dist/vue.common.js");
 
 export default {
   name: "app",
