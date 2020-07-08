@@ -44,4 +44,10 @@ export default {
   font-size: 16px;
   border-radius: 5px;
 }
+@media screen and (min-width: 721px) {
+  .search input {
+    width: 100%;
+    margin-top: 50px;
+  }
+}
 </style>
