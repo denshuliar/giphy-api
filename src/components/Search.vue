@@ -44,9 +44,9 @@ export default {
   font-size: 16px;
   border-radius: 5px;
 }
-@media screen and (min-width: 721px) {
+@media screen and (max-width: 721px) {
   .search input {
-    width: 100%;
+    width: 400px;
     margin-top: 50px;
   }
 }
