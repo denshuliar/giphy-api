@@ -13,7 +13,7 @@
       <p class="not-found" v-if="isNotSearch">
         <img src="https://media.giphy.com/media/YyKPbc5OOTSQE/giphy.gif" alt />
       </p>
-      <div class="wrapper" id="wrapper" v-on:scroll="onScroll">
+      <div class="wrapper" id="wrapper" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
         <preview :gifs="gifs"></preview>
       </div>
     </div>
@@ -29,12 +29,24 @@ export default {
   components: { Search, Preview },
   data() {
     return {
+      busy: false,
+      data: [],
       isLoading: true,
       isNotSearch: false,
       gifs: []
     };
   },
   methods: {
+    loadMore: function() {
+      this.busy = true;
+
+      setTimeout(() => {
+        for (var i = 0, j = 10; i < j; i++) {
+          this.data.push({ name: count++ });
+        }
+        this.busy = false;
+      }, 1000);
+    },
     onScroll(event) {
       var wrapper = event.target,
         list = wrapper.firstElementChild;
